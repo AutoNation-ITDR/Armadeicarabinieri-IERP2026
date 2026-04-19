@@ -874,3 +874,75 @@ a.contact-card-link {
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
   .footer-links { justify-content: center; }
 }
+
+/* Reparto full name */
+.reparto-full {
+  font-size: 0.72rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  margin-top: -0.5rem;
+  font-style: italic;
+}
+
+/* Badge speciale ROS */
+.reparto-badge-special {
+  background: rgba(201,168,76,0.2) !important;
+  color: var(--gold-light) !important;
+  border-color: rgba(201,168,76,0.5) !important;
+}
+
+/* ===== HERO SLIDESHOW ===== */
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+
+.hero-slide.active { opacity: 1; }
+
+/* ===== REPARTO CARD CON IMMAGINE ===== */
+.reparto-card {
+  padding: 0 !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.reparto-img {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+  flex-shrink: 0;
+}
+
+.reparto-card:hover .reparto-img {
+  transform: scale(1.05);
+}
+
+.reparto-body {
+  padding: 1.75rem 1.75rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.reparto-body .reparto-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.reparto-body h3 { margin-bottom: 0.2rem; }
+.reparto-body p:not(.reparto-full) { flex: 1; }
+.reparto-body .reparto-badge { margin-top: 1rem; align-self: flex-start; }

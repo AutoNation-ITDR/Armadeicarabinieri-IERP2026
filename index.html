@@ -12,7 +12,7 @@
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
-    <div class="nav-brand">
+    <a class="nav-brand" href="#home">
       <div class="nav-logo">
         <img src="https://res.cloudinary.com/dajjun43n/image/upload/v1776556698/occofjisvhzbzgfdn6qc.webp" alt="Stemma Carabinieri IERP" />
       </div>
@@ -20,12 +20,13 @@
         <span class="nav-name">Arma dei Carabinieri</span>
         <span class="nav-sub">I.E.R.P.</span>
       </div>
-    </div>
+    </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#chi-siamo">Chi Siamo</a></li>
       <li><a href="#storia">Storia</a></li>
       <li><a href="#reparti">Reparti</a></li>
+      <li><a href="#personale">Personale</a></li>
       <li><a href="#unisciti">Unisciti</a></li>
       <li><a href="#contatti">Contatti</a></li>
       <li><a href="admin.html" class="nav-area-personale">🔐 Area Personale</a></li>
@@ -37,14 +38,18 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <img class="hero-bg-logo"
-      src="https://res.cloudinary.com/dajjun43n/image/upload/v1776556698/occofjisvhzbzgfdn6qc.webp"
-      alt="" aria-hidden="true" />
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <!-- Slideshow background -->
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image:url('https://res.cloudinary.com/dajjun43n/image/upload/v1776603112/ulrfbrnlfl1iahrsyq6g.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/dajjun43n/image/upload/v1776603112/ts6e7ffc6icrbd4p1h9p.jpg')"></div>
+    </div>
+    <img class="hero-bg-logo" src="https://res.cloudinary.com/dajjun43n/image/upload/v1776556698/occofjisvhzbzgfdn6qc.webp" alt="" aria-hidden="true" />
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-label">Repubblica Italiana — Arma dei Carabinieri — I.E.R.P.</p>
       <h1 class="hero-title">
-        Nei Secoli
+        <span class="hero-title-line">Nei Secoli</span>
         <em>Fedele.</em>
       </h1>
       <p class="hero-desc">
@@ -52,8 +57,15 @@
         Su IERP portiamo onore, disciplina e servizio al cittadino.
       </p>
       <div class="hero-buttons">
-        <a href="#unisciti" class="btn btn-primary">Unisciti all'Arma →</a>
+        <a href="#unisciti" class="btn btn-primary">
+          <span>Unisciti all'Arma</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
         <a href="#storia" class="btn btn-outline">Storia e Valori</a>
+      </div>
+      <div class="hero-scroll-hint">
+        <span></span>
+        <p>Scorri</p>
       </div>
     </div>
     <div class="hero-motto-card">
@@ -66,11 +78,11 @@
   <!-- STATS BAR -->
   <div class="stats-bar">
     <div class="stat">
-      <span class="stat-num">1814</span>
+      <span class="stat-num" data-target="1814" data-format="year">1814</span>
       <span class="stat-label">Anno di Fondazione</span>
     </div>
     <div class="stat">
-      <span class="stat-num">210+</span>
+      <span class="stat-num" data-target="210" data-suffix="+">210+</span>
       <span class="stat-label">Anni di Storia</span>
     </div>
     <div class="stat">
@@ -90,29 +102,29 @@
         <p class="section-tag">Chi Siamo</p>
         <h2>La Benemerita</h2>
         <div class="section-divider"></div>
-        <p class="section-desc" style="margin-top:1rem;">
+        <p class="section-desc" style="margin-top:1.25rem;">
           L'Arma dei Carabinieri, conosciuta come <strong>La Benemerita</strong>, è una delle principali
           forze dell'ordine d'Italia con funzioni sia militari che di polizia civile.
         </p>
       </div>
       <div class="cards-grid">
         <div class="card fade-up">
-          <span class="card-icon">⚖️</span>
+          <div class="card-icon-wrap">⚖️</div>
           <h3>Ordine Pubblico</h3>
           <p>Garantiamo la sicurezza dei cittadini, il rispetto della legge e l'ordine pubblico su tutto il territorio nazionale.</p>
         </div>
         <div class="card fade-up">
-          <span class="card-icon">🎖️</span>
+          <div class="card-icon-wrap">🎖️</div>
           <h3>Forza Militare</h3>
           <p>Quarta forza armata della Repubblica Italiana, partecipiamo a missioni militari in Italia e all'estero.</p>
         </div>
         <div class="card fade-up">
-          <span class="card-icon">🛡️</span>
+          <div class="card-icon-wrap">🛡️</div>
           <h3>Polizia Giudiziaria</h3>
           <p>Svolgiamo attività investigativa e di polizia giudiziaria su iniziativa propria o su richiesta dell'autorità giudiziaria.</p>
         </div>
         <div class="card fade-up">
-          <span class="card-icon">🌍</span>
+          <div class="card-icon-wrap">🌍</div>
           <h3>Missioni Internazionali</h3>
           <p>Presenti in missioni di pace in Kosovo, Afghanistan, Iraq e in molti altri teatri operativi internazionali.</p>
         </div>
@@ -120,7 +132,7 @@
     </div>
   </section>
 
-  <!-- STORIA E VALORI -->
+  <!-- STORIA -->
   <section class="section section-dark" id="storia">
     <div class="container">
       <div class="section-header light">
@@ -201,32 +213,71 @@
         <p class="section-tag">Organizzazione</p>
         <h2>I Reparti su IERP</h2>
         <div class="section-divider"></div>
-        <p class="section-desc" style="margin-top:1rem;">La struttura operativa dell'Arma dei Carabinieri nel server IERP.</p>
+        <p class="section-desc" style="margin-top:1.25rem;">La struttura operativa dell'Arma dei Carabinieri nel server IERP.</p>
       </div>
       <div class="reparti-grid">
         <div class="reparto-card fade-up">
-          <span class="reparto-icon">🚔</span>
-          <h3>Pattuglia Territoriale</h3>
-          <p>Presidio del territorio, controllo del traffico e intervento su chiamata dei cittadini.</p>
-          <span class="reparto-badge">Operativo</span>
+          <div class="reparto-img" style="background-image:url('https://res.cloudinary.com/dajjun43n/image/upload/v1776603251/sbchjx09ccvzzqjt0dip.jpg')"></div>
+          <div class="reparto-body">
+            <span class="reparto-icon">🔍</span>
+            <h3>R.O.S.</h3>
+            <p class="reparto-full">Raggruppamento Operativo Speciale</p>
+            <p>Unità d'élite dedicata alle indagini su criminalità organizzata, terrorismo e reati di massima gravità.</p>
+            <span class="reparto-badge reparto-badge-special">Speciale</span>
+          </div>
         </div>
         <div class="reparto-card fade-up">
-          <span class="reparto-icon">🔍</span>
-          <h3>Nucleo Investigativo</h3>
-          <p>Indagini su reati gravi, criminalità organizzata e attività investigativa specializzata.</p>
-          <span class="reparto-badge">Operativo</span>
+          <div class="reparto-img" style="background-image:url('https://res.cloudinary.com/dajjun43n/image/upload/v1776603250/wiqvn7jzf9ejz5ovhi8x.jpg')"></div>
+          <div class="reparto-body">
+            <span class="reparto-icon">🚔</span>
+            <h3>Territoriale</h3>
+            <p class="reparto-full">Comando Stazione Territoriale</p>
+            <p>Presidio del territorio, controllo del traffico, ordine pubblico e intervento su chiamata dei cittadini.</p>
+            <span class="reparto-badge">Operativo</span>
+          </div>
         </div>
         <div class="reparto-card fade-up">
-          <span class="reparto-icon">🏍️</span>
-          <h3>Nucleo Radiomobile</h3>
-          <p>Pronto intervento, pattugliamento veloce e supporto alle stazioni territoriali.</p>
-          <span class="reparto-badge">Operativo</span>
+          <div class="reparto-img" style="background-image:url('https://res.cloudinary.com/dajjun43n/image/upload/v1776603147/yueuaiwb5fxs1iwlpzf3.webp')"></div>
+          <div class="reparto-body">
+            <span class="reparto-icon">🛡️</span>
+            <h3>A.P.I.</h3>
+            <p class="reparto-full">Aliquota Pronto Intervento</p>
+            <p>Squadra di pronto intervento per situazioni di emergenza, supporto tattico e gestione degli ordini pubblici.</p>
+            <span class="reparto-badge">Operativo</span>
+          </div>
         </div>
         <div class="reparto-card fade-up">
-          <span class="reparto-icon">⭐</span>
-          <h3>Comando Stazione</h3>
-          <p>Gestione della stazione locale, coordinamento delle pattuglie e rapporti con i cittadini.</p>
-          <span class="reparto-badge">Comando</span>
+          <div class="reparto-img" style="background-image:url('https://res.cloudinary.com/dajjun43n/image/upload/v1776603251/ggne1fpqntwljpexbult.webp')"></div>
+          <div class="reparto-body">
+            <span class="reparto-icon">🏍️</span>
+            <h3>N.O.R.M.</h3>
+            <p class="reparto-full">Nucleo Operativo e Radiomobile</p>
+            <p>Pattugliamento veloce, pronto intervento su chiamata radio e supporto alle stazioni territoriali.</p>
+            <span class="reparto-badge">Operativo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONALE PUBBLICO -->
+  <section class="section" id="personale">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Organico</p>
+        <h2>Il Nostro Personale</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc" style="margin-top:1.25rem;">Il personale attualmente in servizio nell'Arma dei Carabinieri su IERP.</p>
+      </div>
+      <div class="personale-filters fade-up">
+        <button class="filter-btn active" data-filter="all">Tutti</button>
+        <button class="filter-btn" data-filter="Attivo">Attivi</button>
+        <button class="filter-btn" data-filter="In Addestramento">In Addestramento</button>
+      </div>
+      <div class="personale-grid" id="personaleGrid">
+        <div class="personale-loading">
+          <div class="spinner"></div>
+          <p>Caricamento personale...</p>
         </div>
       </div>
     </div>
@@ -235,25 +286,29 @@
   <!-- UNISCITI -->
   <section class="section join-section" id="unisciti">
     <div class="container">
-      <div class="join-content">
+      <div class="join-content fade-up">
         <p class="section-tag">Arruolamento</p>
         <h2>Entra nell'Arma</h2>
         <div class="section-divider" style="margin:0.75rem 0 1.5rem;"></div>
         <p>Sei pronto a servire la Repubblica su IERP? L'Arma dei Carabinieri cerca personale serio,
           disciplinato e appassionato. Unisciti a noi e porta avanti una tradizione bicentenaria.</p>
         <div class="join-requirements">
-          <div class="req">✅ Account Roblox attivo</div>
-          <div class="req">✅ Rispetto del regolamento IERP</div>
-          <div class="req">✅ Serietà e disciplina</div>
-          <div class="req">✅ Disponibilità al servizio</div>
+          <div class="req"><span class="req-check">✓</span> Account Roblox attivo</div>
+          <div class="req"><span class="req-check">✓</span> Rispetto del regolamento IERP</div>
+          <div class="req"><span class="req-check">✓</span> Serietà e disciplina</div>
+          <div class="req"><span class="req-check">✓</span> Disponibilità al servizio</div>
         </div>
         <a href="https://ierp-fdo.lovable.app" target="_blank" rel="noopener" class="btn btn-primary btn-large">
-          Fai Domanda →
+          <span>Fai Domanda</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
-      <div class="join-badge">
-        <img src="https://res.cloudinary.com/dajjun43n/image/upload/v1776556698/occofjisvhzbzgfdn6qc.webp" alt="Stemma Carabinieri IERP" />
-        <p>«Nei Secoli Fedele»</p>
+      <div class="join-badge fade-up">
+        <div class="join-badge-inner">
+          <img src="https://res.cloudinary.com/dajjun43n/image/upload/v1776556698/occofjisvhzbzgfdn6qc.webp" alt="Stemma Carabinieri IERP" />
+          <p>«Nei Secoli Fedele»</p>
+          <span>— Arma dei Carabinieri —</span>
+        </div>
       </div>
     </div>
   </section>
@@ -267,20 +322,29 @@
         <div class="section-divider"></div>
       </div>
       <div class="contact-grid">
-        <a class="contact-card contact-card-link fade-up" href="https://discord.gg/dq8QM5peT7" target="_blank" rel="noopener">
-          <span class="contact-icon">🎮</span>
+        <a class="contact-card fade-up" href="https://discord.gg/dq8QM5peT7" target="_blank" rel="noopener">
+          <div class="contact-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.03.056a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+          </div>
           <h3>Server IERP</h3>
           <p>Entra nel Discord del server IERP su ERLC Roblox</p>
+          <span class="contact-arrow">→</span>
         </a>
-        <a class="contact-card contact-card-link fade-up" href="https://discord.gg/E2d7zjSbQG" target="_blank" rel="noopener">
-          <span class="contact-icon">💬</span>
+        <a class="contact-card fade-up" href="https://discord.gg/E2d7zjSbQG" target="_blank" rel="noopener">
+          <div class="contact-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.03.056a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+          </div>
           <h3>Discord Ufficiale dell'Arma</h3>
           <p>Unisciti al Discord ufficiale dell'Arma dei Carabinieri su IERP</p>
+          <span class="contact-arrow">→</span>
         </a>
-        <a class="contact-card contact-card-link fade-up" href="https://ierp-fdo.lovable.app" target="_blank" rel="noopener">
-          <span class="contact-icon">📋</span>
+        <a class="contact-card fade-up" href="https://ierp-fdo.lovable.app" target="_blank" rel="noopener">
+          <div class="contact-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
           <h3>Candidatura</h3>
           <p>Compila il modulo di candidatura per entrare nell'Arma dei Carabinieri su IERP</p>
+          <span class="contact-arrow">→</span>
         </a>
       </div>
     </div>
@@ -301,6 +365,7 @@
           <a href="#chi-siamo">Chi Siamo</a>
           <a href="#storia">Storia</a>
           <a href="#reparti">Reparti</a>
+          <a href="#personale">Personale</a>
           <a href="#unisciti">Unisciti</a>
           <a href="admin.html">Area Personale</a>
         </nav>
@@ -308,11 +373,11 @@
       </div>
       <div class="footer-bottom">
         <p>© 2025 Arma dei Carabinieri — IERP. Sito non ufficiale per Roblox ERLC.</p>
-        <p style="color:rgba(255,255,255,0.15);">Fondazione: 13 luglio 1814</p>
+        <p>Fondazione: 13 luglio 1814</p>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
